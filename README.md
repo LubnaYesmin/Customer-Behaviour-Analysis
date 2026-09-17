@@ -47,5 +47,28 @@ Age tracking highlights distinct operational revenue clusters distributed across
 
 ---
 
+
 ## ⚙️ Data Engineering & ETL Pipeline
+
+```mermaid
+graph TD
+    A[Python / Pandas] -->|Data Extraction & Cleaning| B(MySQL Database)
+    B -->|Relational Storage Warehouse| C(Power BI Desktop)
+    C -->|Dynamic Visualizations & KPIs| D[Business Insights]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#f96,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+```
+
+### 1. Python Data Preprocessing
+Raw transactional customer items were loaded into a Python environment, cleaned using Pandas, and structural validation steps were performed to ensure data integrity before database ingestion.
+
+### 2. Database Ingestion (MySQL)
+The processed dataset was programmatically pushed into a local MySQL instance using `SQLAlchemy` and `PyMySQL` drivers. This relational setup allows scalability and structured querying.
+
+### 3. Analytical Modeling & Visuals
+Created dynamic relational schemas inside Power BI, mapping multi-conditional slicers (Gender, Age Group, Category) directly onto distinct metric cards, donut charts, area charts, and bar graphs to empower data-driven business decisions.
+
 
